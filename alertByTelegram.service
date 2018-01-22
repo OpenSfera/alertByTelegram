@@ -1,0 +1,13 @@
+[Unit]
+Description=alertByTelegram - OpenSfera Service
+After=mongodb.service
+
+[Service]
+Type=idle
+User=root
+WorkingDirectory=/usr/local/sfera/alertByTelegram
+ExecStart=/usr/bin/python3 /usr/local/sfera/alertByTelegram/alertByTelegram.py
+Restart=on-abort
+
+[Install]
+WantedBy=multi-user.target
